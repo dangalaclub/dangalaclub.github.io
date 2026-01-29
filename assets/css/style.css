@@ -20,6 +20,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo {
@@ -27,6 +28,14 @@ nav {
     font-size: 2rem;
     color: var(--primary-yellow);
     letter-spacing: 2px;
+    flex-shrink: 0;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .contact-item {
@@ -37,10 +46,20 @@ nav {
     color: var(--text-main);
     font-weight: 500;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .contact-item:hover {
     color: var(--primary-yellow);
+}
+
+@media (max-width: 900px) {
+    .contact-item span {
+        display: none;
+    }
+    nav {
+        padding: 1.5rem;
+    }
 }
 
 .hero {
@@ -85,11 +104,11 @@ h1 {
     display: flex;
     flex-direction: column;
     min-height: 500px;
-    transition: transform 0.3s ease; /* Restored transition */
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Restored hover effect */
+    transform: translateY(-10px);
 }
 
 .card.highlight {
@@ -114,7 +133,7 @@ h1 {
     list-style: none;
     padding: 0;
     margin: 0 0 2rem 0;
-    flex-grow: 1; /* Pushes the RSVP and Badge to the bottom */
+    flex-grow: 1;
 }
 
 .speaker-list li {
@@ -129,7 +148,7 @@ h1 {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
-    margin-top: auto; /* Ensures footer content stays at the bottom */
+    margin-top: auto;
 }
 
 .badge {
